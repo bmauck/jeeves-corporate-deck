@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jeeves — Company Overview</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--b:#08080a;--c:#111114;--br:#1a1a1f;--g:#c9a84c;--gd:rgba(201,168,76,.12);--t:#d4d2cc;--d:#6a6a6a;--w:#f0eeea;--tl:#2ec4b6}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+body{background:var(--b);color:var(--t);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+::selection{background:var(--g);color:var(--b)}
+section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:100px 10vw 80px;position:relative;overflow:hidden}
+section::after{content:'';position:absolute;width:900px;height:900px;border-radius:50%;pointer-events:none;opacity:.025;background:var(--g);filter:blur(220px)}
+section:nth-child(odd)::after{top:-350px;right:-250px}
+section:nth-child(even)::after{bottom:-350px;left:-250px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 10vw;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,10,.8);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.04)}
+.lo{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--g)}
+.nr{display:flex;align-items:center;gap:20px}
+.ds{display:flex;gap:6px}.dt{width:6px;height:6px;border-radius:50%;background:var(--br);cursor:pointer;transition:all .4s}.dt.a{background:var(--g);transform:scale(1.4)}
+.cn{font-size:12px;color:var(--d);font-variant-numeric:tabular-nums;min-width:50px;text-align:right}
+.cf{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--d);border:1px solid var(--br);padding:4px 12px;border-radius:3px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(40px,5.5vw,82px);font-weight:900;line-height:1.04;letter-spacing:-3px;color:var(--w)}
+h2{font-family:'Playfair Display',serif;font-size:clamp(34px,4.2vw,64px);font-weight:700;line-height:1.08;letter-spacing:-2px;color:var(--w)}
+.su{font-size:clamp(15px,1.3vw,20px);color:var(--d);line-height:1.65;max-width:640px;margin-top:20px;font-weight:300}
+.gl{color:var(--g)}.it{font-style:italic}
+.sp{width:48px;height:2px;background:var(--g);margin:24px 0}
+.tg{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--g);margin-bottom:20px}
+.f{opacity:0;transform:translateY(24px);transition:all .9s cubic-bezier(.16,1,.3,1)}.f.v{opacity:1;transform:none}
+.f.d1{transition-delay:.1s}.f.d2{transition-delay:.2s}.f.d3{transition-delay:.3s}.f.d4{transition-delay:.4s}
+.gr{display:grid;gap:16px;margin-top:40px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}.g4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:800px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}}
+.cd{background:var(--c);border:1px solid var(--br);border-radius:14px;padding:28px;transition:border-color .4s}
+.cd:hover{border-color:rgba(201,168,76,.25)}
+.cd .l{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--d);margin-bottom:6px}
+.cd .n{font-family:'Playfair Display',serif;font-size:clamp(28px,2.5vw,44px);font-weight:900;color:var(--w)}
+.cd .s{font-size:12px;color:var(--g);margin-top:4px;font-weight:500}
+.tc{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:40px}
+@media(max-width:800px){.tc{grid-template-columns:1fr;gap:32px}}
+.ql p{font-size:15px;color:var(--t);padding:13px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:16px;align-items:baseline}.ql p:last-child{border:none}.ql .b{color:var(--g);font-size:8px;flex-shrink:0;margin-top:6px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}@media(max-width:800px){.ba{grid-template-columns:1fr}}
+.bc{border-radius:14px;padding:32px}.bc.ol{background:#120e0e;border:1px solid #231a1a}.bc.nw{background:#0e1210;border:1px solid #1a2a1e}
+.bc h4{font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}.bc.ol h4{color:#8a5555}.bc.nw h4{color:var(--g)}
+.bc p{font-size:14px;color:var(--t);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.03);line-height:1.5}.bc p:last-child{border:none}
+.pr{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.pi{background:var(--c);border:1px solid var(--br);border-radius:8px;padding:10px 18px;font-size:13px;font-weight:500;color:var(--t);transition:all .3s}.pi:hover{border-color:var(--g);color:var(--w)}
+.qb{border-left:2px solid var(--g);padding:24px 32px;margin-top:28px;max-width:600px}.qb p{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--w);line-height:1.5}.qb .at{font-size:12px;color:var(--d);font-style:normal;margin-top:10px}
+.pl{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}@media(max-width:800px){.pl{grid-template-columns:1fr}}
+.pc{background:var(--c);border:1px solid var(--br);border-radius:14px;padding:32px;transition:border-color .4s}.pc:hover{border-color:rgba(201,168,76,.2)}.pc .ic{font-size:28px;margin-bottom:12px}.pc h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--w);margin-bottom:10px}.pc p{font-size:13px;color:var(--d);line-height:1.6}
+.cp{width:100%;margin-top:36px;border-collapse:separate;border-spacing:0;max-width:1000px}.cp th,.cp td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--br);font-size:13px}.cp th{color:var(--d);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:500}.cp .jc{background:var(--gd);color:var(--w);font-weight:600}.ck{color:var(--g)}.cx{color:#444}
+.cw{background:var(--c);border:1px solid var(--br);border-radius:14px;padding:28px;position:relative;overflow:hidden}
+.mu{display:inline-block;background:var(--g);color:var(--b);font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;margin-left:8px}
+.fl{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-start;gap:12px}
+.fn{background:var(--c);border:1px solid var(--br);border-radius:10px;padding:16px 24px;text-align:center;font-size:14px;font-weight:500;color:var(--w)}.fn.hl{border-color:var(--g);background:var(--gd)}
+.tl{display:flex;margin-top:56px;position:relative;max-width:950px}.tl::before{content:'';position:absolute;top:8px;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--g),var(--g),var(--br))}
+.ti{flex:1;padding-right:16px}.td{width:10px;height:10px;border-radius:50%;background:var(--g);margin-bottom:14px;position:relative;z-index:1;box-shadow:0 0 16px rgba(201,168,76,.3)}.td.fu{background:transparent;border:1.5px solid var(--g);box-shadow:none}
+.ty{font-family:'Playfair Display',serif;font-size:16px;color:var(--d);font-weight:700}.tv{font-family:'Playfair Display',serif;font-size:clamp(24px,2.5vw,36px);font-weight:900;color:var(--w);margin-top:2px}.tv.gv{color:var(--g)}.ts{font-size:11px;color:var(--d);margin-top:2px}
+.hn{position:fixed;bottom:20px;right:10vw;font-size:11px;color:var(--d);z-index:100;display:flex;gap:6px;align-items:center}.k{background:var(--c);border:1px solid var(--br);border-radius:3px;padding:1px 6px;font-size:10px}
+.ag{background:var(--c);border:1px solid var(--br);border-radius:14px;padding:24px;transition:border-color .4s}.ag:hover{border-color:rgba(201,168,76,.25)}
+.ag h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--w);margin-bottom:8px}
+.ag p{font-size:12px;color:var(--d);line-height:1.6}
+.ag .tgt{font-size:11px;color:var(--tl);margin-top:8px;font-style:italic}
+.el{background:var(--c);border:1px solid var(--br);border-radius:8px;padding:8px 18px;font-size:13px;font-weight:500;color:var(--w);transition:all .3s;display:inline-block}.el:hover{border-color:var(--g)}
+.trj{display:flex;align-items:flex-end;gap:20px;max-width:900px;height:300px;padding:0 10px}
+.trj-bar{display:flex;flex-direction:column;align-items:center;flex:1}
+.trj-val{font-family:'Playfair Display',serif;font-weight:900;margin-bottom:6px}
+.trj-mul{font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.trj-fill{width:100%;border-radius:6px 6px 0 0;min-height:16px}
+.trj-lbl{font-size:12px;color:var(--d);margin-top:10px}
+.trj-sub{font-size:10px;color:var(--d);margin-top:2px}
+</style>
+</head>
+<body>
+<nav><div class="lo">Jeeves</div><div class="nr"><span class="cf">Confidential</span><div class="ds" id="dots"></div><div class="cn" id="cnt">01 / 20</div></div></nav>
+<div class="hn"><span class="k">↑</span><span class="k">↓</span> navigate</div>
+
+<!-- S0: COVER -->
+<section id="s0">
+<div class="f"><div class="tg">The Inevitable Shift</div></div>
+<div class="f d1"><h1>The world's first<br>stablecoin-native<br><span class="gl it">financial operating system</span><br>for next-gen finance teams.</h1></div>
+<div class="f d2"><p style="font-size:clamp(16px,1.3vw,20px);color:var(--d);margin-top:24px;font-weight:300;line-height:1.6;max-width:560px">AI-native. Stablecoin-native. Built from day one as global financial infrastructure — starting with Latin America, the final frontier of fintech.</p></div>
+<div class="f d3"><div class="gr g4" style="max-width:1000px;margin-top:48px">
+<div class="cd"><div class="l">ARR (Jan 2026)</div><div class="n">$43M</div><div class="s">→ $100M EOY '26 · $250M '27</div></div>
+<div class="cd"><div class="l">Gross Margin</div><div class="n">83%</div><div class="s">Contribution margin 45%+</div></div>
+<div class="cd"><div class="l">TPV</div><div class="n">$3B+</div><div class="s">Across 4 product lines</div></div>
+<div class="cd"><div class="l">Revenue CAGR</div><div class="n">133%</div><div class="s">Two consecutive years of 2x+</div></div>
+</div></div>
+</section>
+
+<!-- S1: THE PROBLEM -->
+<section id="s1">
+<div class="f"><div class="tg">The Problem</div></div>
+<div class="f d1"><h2>Global finance teams<br>(and their employees) are stuck<br>in the <span class="gl it">2000s.</span></h2></div>
+<div class="f d2"><p class="su">The tools built for domestic, single-currency businesses cannot serve the modern global enterprise.</p></div>
+<div class="f d3"><div class="tc" style="max-width:900px">
+<div>
+<p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:16px">Finance Teams</p>
+<div class="ql">
+<p><span class="b">●</span> 5+ banking relationships across countries</p>
+<p><span class="b">●</span> Manual reconciliation across currencies</p>
+<p><span class="b">●</span> No unified view of global spend</p>
+<p><span class="b">●</span> Weeks to onboard new-country payments</p>
+</div>
+</div>
+<div>
+<p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:16px">Employees</p>
+<div class="ql">
+<p><span class="b">●</span> Declined cards abroad — wrong currency, wrong network</p>
+<p><span class="b">●</span> Expense reports that take days to file</p>
+<p><span class="b">●</span> Reimbursements delayed weeks across borders</p>
+<p><span class="b">●</span> No visibility into policy or limits</p>
+</div>
+</div>
+</div></div>
+</section>
+
+<!-- S2: SOLUTION -->
+<section id="s2">
+<div class="f"><div class="tg">The Solution</div></div>
+<div class="f d1"><h2>Jeeves saves global businesses<br><span class="gl it">8–12% on financial operations.</span></h2></div>
+<div class="f d2"><p class="su">We didn't build an app on top of banks. We built the infrastructure layer.</p></div>
+<div class="f d3"><div class="gr g4" style="max-width:1000px">
+<div class="cd"><div style="font-size:24px;margin-bottom:8px">💰</div><div class="l">Save 8–12%</div><p style="font-size:13px;color:var(--t);margin-top:8px">Eliminate hidden FX fees, reduce wire costs by 80%+, consolidate banking relationships</p></div>
+<div class="cd"><div style="font-size:24px;margin-bottom:8px">⚡</div><div class="l">Move Faster</div><p style="font-size:13px;color:var(--t);margin-top:8px">Real-time cross-border payments via stablecoin. Minutes, not days.</p></div>
+<div class="cd"><div style="font-size:24px;margin-bottom:8px">🔍</div><div class="l">Full Visibility</div><p style="font-size:13px;color:var(--t);margin-top:8px">One dashboard for global spend, cards, AP, and treasury across every country</p></div>
+<div class="cd"><div style="font-size:24px;margin-bottom:8px">🤖</div><div class="l">AI Automation</div><p style="font-size:13px;color:var(--t);margin-top:8px">AI agents handle reconciliation, expense coding, travel policy, and AP approval</p></div>
+</div></div>
+<div class="f d4"><div class="qb" style="margin-top:28px"><p>"81% cost savings on $556K in cross-border purchases."</p><div class="at">— Tecproesa, Mexican aerospace enterprise</div></div></div>
+</section>
+
+<!-- S3: OPPORTUNITY — LATAM frontier -->
+<section id="s3">
+<div class="f"><div class="tg">The Opportunity</div></div>
+<div class="f d1"><h2>Latin America is the<br><span class="gl it">last frontier</span> of fintech.</h2></div>
+<div class="f d2"><p class="su">Fragmented regulation across every country. Different payment rails in every market. No shared credit infrastructure. Multi-currency economies with chronic FX inefficiency. If you can build here, you can build anywhere. The complexity is the moat.</p></div>
+<div class="f d3"><div class="tc" style="max-width:950px">
+<div class="ql">
+<p><span class="b">●</span> Every country has its own payment rails — SPEI, PIX, PSE — none interoperable</p>
+<p><span class="b">●</span> Regulatory regimes that shift yearly (Brazil SCD changes, Mexico SOFOM)</p>
+<p><span class="b">●</span> No FICO equivalent — underwriting requires country-specific architecture</p>
+<p><span class="b">●</span> Cross-border by default — businesses transact across borders daily</p>
+<p><span class="b">●</span> Underbanked mid-market enterprise with &lt;2% fintech penetration</p>
+</div>
+<div>
+<div class="cd" style="margin-bottom:12px"><div class="l">Addressable Companies</div><div class="n">~1M</div><div class="s">30+ employee mid-market in BR, MX, CO</div></div>
+<div class="cd" style="margin-bottom:12px"><div class="l">Revenue TAM</div><div class="n">$25B+</div><div class="s">At current $134K ACV — expanding</div></div>
+<div class="cd"><div class="l">B2B Fintech Penetration</div><div class="n">&lt;2%</div><div class="s">Largest greenfield in global fintech</div></div>
+</div>
+</div></div>
+</section>
+
+<!-- S4: ENTERPRISE + GDP -->
+<section id="s4">
+<div class="f"><div class="tg">Enterprise Trust</div></div>
+<div class="f d1"><h2>Enterprises representing ~1% of<br>LatAm GDP <span class="gl it">run on Jeeves.</span></h2></div>
+<div class="f d2"><p class="su">In just 4 years, we've become core financial infrastructure for companies generating over $50B+ in combined annual revenue across Brazil, Mexico, and Colombia.</p></div>
+<div class="f d3"><div style="display:flex;flex-wrap:wrap;gap:10px;max-width:900px">
+<div class="el">🏦 XP</div><div class="el">💜 Nubank</div><div class="el">🚗 Porsche Latam</div><div class="el">⛽ Petrobras</div><div class="el">💻 Hotmart</div><div class="el">✈️ CVC Corp</div><div class="el">🌱 Cayena</div><div class="el">🖥️ Mac Center</div><div class="el">✈️ Copastur</div><div class="el">🔗 Belvo</div><div class="el">🍔 Foodology</div><div class="el">🏗️ Corpacero</div><div class="el">🛡️ Kueski</div><div class="el">🌐 EZLink</div><div class="el">✈️ Voll</div>
+</div></div>
+<div class="f d4"><div class="gr g4" style="max-width:1000px;margin-top:28px">
+<div class="cd"><div class="l">Avg. ACV</div><div class="n">$134K</div><div class="s">4× the LatAm benchmark</div></div>
+<div class="cd"><div class="l">$1M+ Customers</div><div class="n">Multiple</div><div class="s">First in 2025 · expanding</div></div>
+<div class="cd"><div class="l">Net New Logos (2025)</div><div class="n">700+</div><div class="s">Enterprise logos added</div></div>
+<div class="cd"><div class="l">Industries</div><div class="n">8+</div><div class="s">Finserv · Travel · Mfg · E-com · Tech</div></div>
+</div></div>
+</section>
+
+<!-- S5: PLATFORM (moved before moat) -->
+<section id="s5">
+<div class="f"><div class="tg">The Platform</div></div>
+<div class="f d1"><h2>One platform. Every financial<br>workflow. <span class="gl it">Everywhere that matters.</span></h2></div>
+<div class="f d2"><p class="su">Jeeves replaces 7+ fragmented financial tools with a single intelligent platform.</p></div>
+<div class="f d3"><div class="pr" style="max-width:900px">
+<div class="pi">💳 Corporate Cards</div><div class="pi">📊 Spend Management</div><div class="pi">💸 Cross-Border Payments</div><div class="pi">🪙 Stablecoin Rails</div><div class="pi">🏦 Banking & Accounts</div><div class="pi">💱 FX & Treasury</div><div class="pi">📑 Accounts Payable</div><div class="pi">🔗 Cards API / VCN</div><div class="pi">🤖 AI Finance Agents</div><div class="pi">📋 Accounts Receivable</div>
+</div></div>
+<div class="f d4"><div class="gr g3" style="max-width:700px;margin-top:36px">
+<div class="cd"><div class="l">Multi-Product</div><div class="n">60%+</div><div class="s">Use 2+ products</div></div>
+<div class="cd"><div class="l">SaaS Penetration</div><div class="n">63%</div><div class="s">From 0% in Apr '25</div></div>
+<div class="cd"><div class="l">NRR</div><div class="n">131%</div><div class="s">Avg last 4 quarters</div></div>
+</div></div>
+</section>
+
+<!-- S6: MOAT (moved down 2) -->
+<section id="s6">
+<div class="f"><div class="tg">The Moat</div></div>
+<div class="f d1"><h2>Years to build.<br><span class="gl it">No one else has it.</span></h2></div>
+<div class="f d2"><p class="su" style="color:var(--tl)">This is hard infrastructure — not a software layer on top of banks. It cannot be bolted on.</p></div>
+<div class="f d3"><div class="gr g2" style="max-width:950px">
+<div class="cd"><p style="font-size:24px;margin-bottom:12px">💳</p><p style="font-family:'Playfair Display',serif;font-size:18px;color:var(--w);font-weight:700;margin-bottom:8px">Local Card Issuance in 25 Countries</p><p style="font-size:13px;color:var(--d);line-height:1.6">Issue Visa and Mastercard in local currency, with local acquiring — not cross-border workarounds.</p></div>
+<div class="cd"><p style="font-size:24px;margin-bottom:12px">🏛️</p><p style="font-family:'Playfair Display',serif;font-size:18px;color:var(--w);font-weight:700;margin-bottom:8px">Regulated Entities & Local Bank Accounts</p><p style="font-size:13px;color:var(--d);line-height:1.6">Licensed SOFOM (MX), PI filing (BR), financing license (CO). Direct settlement without intermediaries.</p></div>
+<div class="cd"><p style="font-size:24px;margin-bottom:12px">🪙</p><p style="font-family:'Playfair Display',serif;font-size:18px;color:var(--w);font-weight:700;margin-bottom:8px">Proprietary Stablecoin Money Movement</p><p style="font-size:13px;color:var(--d);line-height:1.6">60%+ of cross-border volume on stablecoin rails. Minutes, not days. 3 parties, not 5.</p></div>
+<div class="cd"><p style="font-size:24px;margin-bottom:12px">🌍</p><p style="font-family:'Playfair Display',serif;font-size:18px;color:var(--w);font-weight:700;margin-bottom:8px">Default Global, Multi-Currency Platform</p><p style="font-size:13px;color:var(--d);line-height:1.6">Built from day one as multi-country. Others are retrofitting — we started where they need to finish.</p></div>
+</div></div>
+</section>
+
+<!-- S7: AI AGENTS -->
+<section id="s7">
+<div class="f"><div class="tg">AI Finance Agents</div></div>
+<div class="f d1"><h2>AI agents that become critical<br>members of your <span class="gl it">financial team.</span></h2></div>
+<div class="f d2"><p class="su">We're automating the Office of the CFO — bill pay, accounting, reporting, reconciliation, and controls.</p></div>
+<div class="f d3"><div class="gr g4" style="max-width:1000px">
+<div class="ag"><div style="font-size:24px;margin-bottom:10px">📊</div><h3>Accounting Agent</h3><p>GL code mapping, receipt categorization, reconciliation, end-of-month closing.</p><div class="tgt">Target: 50% time savings</div></div>
+<div class="ag"><div style="font-size:24px;margin-bottom:10px">💸</div><h3>Payment Agent</h3><p>Unified bill inbox, auto AP approval, intelligent routing, customized bulk pay.</p><div class="tgt">Target: 30% time savings</div></div>
+<div class="ag"><div style="font-size:24px;margin-bottom:10px">📈</div><h3>Analyst Agent</h3><p>On-demand analysis, transaction monitoring, CFO reporting, predictive insights.</p><div class="tgt">Target: 20% time savings</div></div>
+<div class="ag"><div style="font-size:24px;margin-bottom:10px">⚙️</div><h3>Controller Agent</h3><p>Travel management, auto expense approval, spend controls, audit prep.</p><div class="tgt">Beta with Nubank & Worky · 50%</div></div>
+</div></div>
+<div class="f d4"><div class="gr g3" style="max-width:700px;margin-top:24px">
+<div class="cd"><div class="l">AI Hours Saved</div><div class="n" style="color:var(--tl)">474/mo</div><div class="s">Across underwriting & ops</div></div>
+<div class="cd"><div class="l">Banking OCR Agent</div><div class="n" style="color:var(--tl)">Live</div><div class="s">Replaced Ocrolus · lower cost</div></div>
+<div class="cd"><div class="l">Travel AI Agent</div><div class="n" style="color:var(--tl)">Beta</div><div class="s">Live with Nubank, Worky</div></div>
+</div></div>
+</section>
+
+<!-- S8: STABLECOIN -->
+<section id="s8">
+<div class="f"><div class="tg">Stablecoin Infrastructure</div></div>
+<div class="f d1"><h2>Stablecoin rails are live.<br><span class="gl it">60% of cross-border volume today.</span></h2></div>
+<div class="f d3"><div class="ba" style="max-width:900px">
+<div class="bc ol"><h4>❌ Before: SWIFT</h4><p>5 parties, 3 intermediaries, 4 fees</p><p>2–5 business days settlement</p><p>1.3% avg FX spread + $25 wire fee</p><p>No visibility until funds arrive</p></div>
+<div class="bc nw"><h4>✦ Today: Jeeves Instant Pay</h4><p>3 parties, 1 intermediary, 1 fee</p><p>Settlement in minutes, 24/7</p><p>0.25% all-in cost (up to 81% savings)</p><p>End-to-end tracking, instant confirmation</p></div>
+</div></div>
+<div class="f d4"><div class="gr g4" style="max-width:1000px;margin-top:24px">
+<div class="cd"><div class="l">Monthly GTV (Jan)</div><div class="n">$20M+</div><div class="s">On track for $50M by H2</div></div>
+<div class="cd"><div class="l">MoM Growth</div><div class="n">300%</div><div class="s">Dec → Jan</div></div>
+<div class="cd"><div class="l">Cross-Border %</div><div class="n">60%</div><div class="s">Of all cross-border vol</div></div>
+<div class="cd"><div class="l">Payout Destinations</div><div class="n">198</div><div class="s">Countries via Jeeves infra</div></div>
+</div></div>
+</section>
+
+<!-- S9: TRACTION (moved before case study) -->
+<section id="s9">
+<div class="f"><div class="tg">Escape Velocity</div></div>
+<div class="f d1"><h2>Revenue more than doubled<br><span class="gl it">two years in a row.</span></h2></div>
+<div class="f d2"><div class="cw" style="max-width:1000px;margin-top:28px;padding:36px">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--d);margin-bottom:4px">Monthly Revenue · Jan 2024 — Jan 2026</div>
+<div style="font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,48px);font-weight:900;color:var(--w)">$43M ARR <span class="mu" style="font-size:13px;vertical-align:middle">7.2× in 24 months</span></div>
+<div style="font-size:14px;color:var(--g);margin-top:4px;margin-bottom:20px">133% CAGR. $100M EOY 2026. $250M 2027.</div>
+<div style="position:relative;height:200px">
+<div style="display:flex;align-items:flex-end;gap:2px;height:170px" id="arrBars"></div>
+<!-- GM% overlay -->
+<svg id="gmLine" style="position:absolute;top:0;left:0;width:100%;height:170px;pointer-events:none"></svg>
+<div style="position:absolute;right:0;top:-4px;font-size:10px;color:var(--tl);display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:12px;height:2px;background:var(--tl)"></span>GM%</div>
+</div>
+<div style="display:flex;justify-content:space-between;padding-top:6px"><span style="font-size:10px;color:var(--d)">Jan '24</span><span style="font-size:10px;color:var(--d)">Jul '24</span><span style="font-size:10px;color:var(--d)">Jan '25</span><span style="font-size:10px;color:var(--d)">Jul '25</span><span style="font-size:10px;color:var(--d)">Jan '26</span></div>
+</div></div>
+<div class="f d3"><div class="gr g2" style="max-width:700px;margin-top:24px">
+<div class="cd"><div class="l">Gross Margin</div><div class="n">83%</div><div class="s">Gross profit $31M · 10× in 23 months</div></div>
+<div class="cd"><div class="l">Contribution Margin</div><div class="n">45%+</div><div class="s">Expanding every quarter · Q4 up 59% QoQ</div></div>
+</div></div>
+</section>
+
+<!-- S10: TRAJECTORY (NEW) -->
+<section id="s10">
+<div class="f"><div class="tg">The Trajectory</div></div>
+<div class="f d1"><h2>We hit escape velocity <span class="gl it">in 2025.</span></h2></div>
+<div class="f d2"><p class="su">Revenue has more than doubled every year for three consecutive years.</p></div>
+<div class="f d3"><div class="cw" style="max-width:1000px;padding:36px">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--d);margin-bottom:4px">Annualized Revenue</div>
+<div style="font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,48px);font-weight:900;color:var(--w)">$43M <span class="mu" style="font-size:13px;vertical-align:middle">7.2× in 24 months</span></div>
+<div style="font-size:14px;color:var(--g);margin-top:4px;margin-bottom:20px">133% CAGR. $100M EOY 2026. $250M 2027.</div>
+<div class="trj">
+<div class="trj-bar"><div class="trj-val" style="font-size:22px;color:var(--w)">$6M</div><div class="trj-mul" style="background:var(--gd);color:var(--g)">2.8×</div><div class="trj-fill" style="height:24px;background:rgba(201,168,76,.35)"></div><div class="trj-lbl">Jan 2024</div></div>
+<div class="trj-bar"><div class="trj-val" style="font-size:26px;color:var(--w)">$17M</div><div class="trj-mul" style="background:var(--gd);color:var(--g)">2.6×</div><div class="trj-fill" style="height:62px;background:rgba(201,168,76,.5)"></div><div class="trj-lbl">Jan 2025</div></div>
+<div class="trj-bar"><div class="trj-val" style="font-size:32px;color:var(--w)">$43M</div><div class="trj-mul" style="background:var(--g);color:var(--b)">2.5×</div><div class="trj-fill" style="height:120px;background:var(--g)"></div><div class="trj-lbl">Jan 2026</div></div>
+<div class="trj-bar"><div class="trj-val" style="font-size:36px;color:var(--g)">$100M</div><div class="trj-mul" style="background:var(--gd);color:var(--g)">2.3×</div><div class="trj-fill" style="height:180px;background:linear-gradient(to top,rgba(201,168,76,.22),rgba(201,168,76,.08));border:1px dashed rgba(201,168,76,.3)"></div><div class="trj-lbl" style="color:var(--g)">Dec 2026</div><div class="trj-sub">On track</div></div>
+<div class="trj-bar"><div class="trj-val" style="font-size:40px;color:var(--g)">$250M</div><div class="trj-mul" style="background:var(--gd);color:var(--g)">2.5×</div><div class="trj-fill" style="height:250px;background:linear-gradient(to top,rgba(201,168,76,.18),rgba(201,168,76,.04));border:1px dashed rgba(201,168,76,.22)"></div><div class="trj-lbl" style="color:var(--g)">Dec 2027</div><div class="trj-sub">Projected</div></div>
+</div>
+</div></div>
+<div class="f d4"><div class="gr g2" style="max-width:600px;margin-top:20px">
+<div class="cd"><div class="l">Gross Margin</div><div class="n">83%</div><div class="s">Gross profit $31M · 10× in 23mo</div></div>
+<div class="cd"><div class="l">Contribution Margin</div><div class="n">45%+</div><div class="s">Q4 up 59% QoQ</div></div>
+</div></div>
+</section>
+
+<!-- S11: CASE STUDY (after traction) -->
+<section id="s11">
+<div class="f"><div class="tg">Case Study</div></div>
+<div class="f d1"><h2>Nubank: <span class="gl it">30× travel GTV growth</span><br>with Card API, Controls & AI.</h2></div>
+<div class="f d2"><div class="tc" style="max-width:950px;margin-top:28px">
+<div>
+<p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:16px">Customer Profile</p>
+<div class="ql">
+<p><span class="b">●</span> <strong style="color:var(--w)">Revenue:</strong> $11.5B USD</p>
+<p><span class="b">●</span> <strong style="color:var(--w)">Employees:</strong> 9,000</p>
+<p><span class="b">●</span> <strong style="color:var(--w)">HQ:</strong> São Paulo, Brazil</p>
+<p><span class="b">●</span> <strong style="color:var(--w)">Active Users:</strong> 256 users, 506 cards</p>
+<p><span class="b">●</span> <strong style="color:var(--w)">Reach:</strong> 6 countries, 3 continents</p>
+<p><span class="b">●</span> <strong style="color:var(--w)">Products:</strong> Cards, Card API, Spend Mgmt, AI Travel Agent</p>
+</div>
+</div>
+<div>
+<div class="cd" style="margin-bottom:16px;text-align:center"><div class="l">Travel GTV Growth</div><div class="n" style="font-size:clamp(48px,5vw,72px)">30×</div><div class="s">After Card API, Automation & Controls</div></div>
+<div class="cd" style="text-align:center"><div class="l">Product Adoption Journey</div><div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+<span style="background:var(--c);border:1px solid var(--br);border-radius:6px;padding:8px 14px;font-size:12px;color:var(--t)">Cards</span><span style="color:var(--g)">→</span>
+<span style="background:var(--c);border:1px solid var(--br);border-radius:6px;padding:8px 14px;font-size:12px;color:var(--t)">Card API</span><span style="color:var(--g)">→</span>
+<span style="background:var(--c);border:1px solid var(--br);border-radius:6px;padding:8px 14px;font-size:12px;color:var(--t)">Spend Mgmt</span><span style="color:var(--g)">→</span>
+<span style="background:var(--c);border:1px solid var(--g);border-radius:6px;padding:8px 14px;font-size:12px;color:var(--g)">AI Travel Agent</span>
+</div></div>
+</div>
+</div></div>
+<div class="f d3"><div class="qb" style="margin-top:20px"><p>"Automatically flagging out-of-policy transactions is a massive win. It replaces heavy manual processes with speed and automation."</p><div class="at">— Julia Borges, Nubank</div></div></div>
+</section>
+
+<!-- S12: COMPETITIVE -->
+<section id="s12">
+<div class="f"><div class="tg">Competitive Landscape</div></div>
+<div class="f d1"><h2>We invented the category.<br><span class="gl it">There is almost no competition.</span></h2></div>
+<div class="f d2"><p class="su">LatAm is the last frontier. Incumbents haven't arrived. Local banks can't innovate fast enough.</p></div>
+<div class="f d3"><table class="cp" style="max-width:1000px">
+<tr><th></th><th class="jc">Jeeves</th><th>Brex / Ramp</th><th>Local Banks</th><th>dLocal / Payoneer</th></tr>
+<tr><td>Local card issuance (25 countries)</td><td class="jc ck">✓</td><td>US only</td><td>1–2 countries</td><td class="cx">—</td></tr>
+<tr><td>Stablecoin cross-border rails</td><td class="jc ck">✓</td><td class="cx">—</td><td class="cx">—</td><td class="cx">—</td></tr>
+<tr><td>Multi-currency deposit accounts</td><td class="jc ck">✓</td><td>USD only</td><td>Local only</td><td>Limited</td></tr>
+<tr><td>AI finance agents</td><td class="jc ck">✓</td><td>Partial</td><td class="cx">—</td><td class="cx">—</td></tr>
+<tr><td>Spend mgmt + ERP integration</td><td class="jc ck">✓</td><td class="ck">✓</td><td class="cx">—</td><td class="cx">—</td></tr>
+<tr><td>Regulated entities in LatAm</td><td class="jc ck">✓</td><td class="cx">—</td><td class="ck">✓</td><td class="cx">—</td></tr>
+<tr><td>Built for LatAm enterprises</td><td class="jc ck">✓</td><td class="cx">—</td><td>Legacy</td><td>Payouts only</td></tr>
+</table></div>
+</section>
+
+<!-- S13: WHY NOW -->
+<section id="s13">
+<div class="f"><div class="tg">Why Now</div></div>
+<div class="f d1"><h2>Three forces amplify our<br><span class="gl it">advantage daily.</span></h2></div>
+<div class="f d3"><div class="pl" style="max-width:950px">
+<div class="pc"><div class="ic">🤖</div><h3>AI makes us faster than any new entrant</h3><p>Our AI agents automate underwriting, reconciliation, and workflows. A competitor starting today would need years to build what we deploy in weeks.</p></div>
+<div class="pc"><div class="ic">🪙</div><h3>Stablecoin eliminates correspondent banking</h3><p>We've replaced SWIFT with programmable money movement. 60% of cross-border on stablecoin. A structural margin advantage.</p></div>
+<div class="pc"><div class="ic">🏛️</div><h3>First movers in regulation become incumbents</h3><p>SOFOM live in Mexico. PI filing in Brazil. In regulated markets, the first player with licenses becomes the default infrastructure.</p></div>
+</div></div>
+</section>
+
+<!-- S14: LEADERSHIP + ARR/FTE -->
+<section id="s14">
+<div class="f"><div class="tg">Leadership</div></div>
+<div class="f d1"><h2>Experienced operators<br><span class="gl it">building for the long term.</span></h2></div>
+<div class="f d3"><div class="gr g3" style="max-width:1050px;margin-top:32px;gap:16px">
+<div class="cd" style="padding:24px;text-align:center">
+<div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gd),rgba(201,168,76,.05));border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Playfair Display',serif;font-size:20px;color:var(--g);font-weight:700">DT</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--w)">Dileep Thazhmon</div>
+<div class="s" style="margin:4px 0 12px">Founder & CEO</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center"><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Jeeng</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">PayPal</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Deloitte</span></div>
+<div style="font-size:10px;color:var(--d);margin-top:6px">Stanford GSB</div>
+</div>
+<div class="cd" style="padding:24px;text-align:center">
+<div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gd),rgba(201,168,76,.05));border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Playfair Display',serif;font-size:20px;color:var(--g);font-weight:700">AM</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--w)">Alex Melikian</div>
+<div class="s" style="margin:4px 0 12px">Chief Financial Officer</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center"><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Payoneer</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">PwC</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Comcast NBCUniversal</span></div>
+<div style="font-size:10px;color:var(--d);margin-top:6px">Tulane University</div>
+</div>
+<div class="cd" style="padding:24px;text-align:center">
+<div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gd),rgba(201,168,76,.05));border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Playfair Display',serif;font-size:20px;color:var(--g);font-weight:700">VG</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--w)">Victor Garrido</div>
+<div class="s" style="margin:4px 0 12px">Chief Operating Officer</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center"><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Bain & Company</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Mastercard</span></div>
+<div style="font-size:10px;color:var(--d);margin-top:6px">Chicago Booth</div>
+</div>
+<div class="cd" style="padding:24px;text-align:center">
+<div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gd),rgba(201,168,76,.05));border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Playfair Display',serif;font-size:20px;color:var(--g);font-weight:700">JB</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--w)">Jordan Bulkoski</div>
+<div class="s" style="margin:4px 0 12px">Chief Revenue Officer</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center"><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Brex</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Snowflake</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">SAP</span></div>
+<div style="font-size:10px;color:var(--d);margin-top:6px">Georgetown University</div>
+</div>
+<div class="cd" style="padding:24px;text-align:center">
+<div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gd),rgba(201,168,76,.05));border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Playfair Display',serif;font-size:20px;color:var(--g);font-weight:700">AJ</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--w)">Audrey Au Joulani</div>
+<div class="s" style="margin:4px 0 12px">Head of People Operations</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center"><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Snapchat</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Walmart</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Walgreens</span></div>
+<div style="font-size:10px;color:var(--d);margin-top:6px">UC Berkeley</div>
+</div>
+<div class="cd" style="padding:24px;text-align:center">
+<div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gd),rgba(201,168,76,.05));border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Playfair Display',serif;font-size:20px;color:var(--g);font-weight:700">KB</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--w)">Kash Baghaei</div>
+<div class="s" style="margin:4px 0 12px">Chief Product Officer</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center"><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Intuit</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">PayPal</span><span style="background:rgba(255,255,255,.05);border-radius:4px;padding:2px 8px;font-size:10px;color:var(--t)">Zelle</span></div>
+<div style="font-size:10px;color:var(--d);margin-top:6px">Georgetown University</div>
+</div>
+</div></div>
+<div class="f d4"><div class="tc" style="max-width:950px;margin-top:28px">
+<div class="cw" style="padding:28px">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--d);margin-bottom:4px">ARR Per Employee</div>
+<div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--w)">+86% YoY</div>
+<div style="font-size:12px;color:var(--g);margin-top:4px;margin-bottom:16px">Doing more with less — revenue scales faster than headcount</div>
+<div id="arrFte" style="display:flex;align-items:flex-end;gap:6px;height:120px"></div>
+<div style="display:flex;justify-content:space-between;padding-top:6px"><span style="font-size:9px;color:var(--d)">Q1'24</span><span style="font-size:9px;color:var(--d)">Q2'24</span><span style="font-size:9px;color:var(--d)">Q3'24</span><span style="font-size:9px;color:var(--d)">Q4'24</span><span style="font-size:9px;color:var(--d)">Q1'25</span><span style="font-size:9px;color:var(--d)">Q2'25</span><span style="font-size:9px;color:var(--d)">Q3'25</span><span style="font-size:9px;color:var(--d)">Q4'25</span></div>
+</div>
+<div>
+<p style="font-size:13px;color:var(--d);line-height:1.6">~170 FTEs globally. Headcount up 30% in 2025. Sales team more than doubled. ARR per employee growing every quarter.</p>
+</div>
+</div></div>
+</section>
+
+<!-- S15: INVESTORS (from old deck) -->
+<section id="s15">
+<div class="f"><div class="tg">The Path Forward</div></div>
+<div class="f d1"><h2>From LatAm<br><span class="gl it">to the world.</span></h2></div>
+<div class="f d3"><div class="tc" style="max-width:950px">
+<div>
+<div style="margin-bottom:28px"><h3 style="font-family:'Playfair Display',serif;font-size:16px;color:var(--g);margin-bottom:6px;font-weight:700">Now — Deepening LatAm Leadership</h3><p style="font-size:14px;color:var(--t);line-height:1.6">SOFOM live in Mexico. PI/SCD in Brazil. $100M SPV closed. 5,000+ enterprises. $43M ARR.</p></div>
+<div style="margin-bottom:28px"><h3 style="font-family:'Playfair Display',serif;font-size:16px;color:var(--g);margin-bottom:6px;font-weight:700">Next — Expanding the Architecture</h3><p style="font-size:14px;color:var(--t);line-height:1.6">Stablecoin cards (Q1). Global corridor expansion. AI finance agents in every workflow. $100M ARR by EOY 2026.</p></div>
+<div><h3 style="font-family:'Playfair Display',serif;font-size:16px;color:var(--g);margin-bottom:6px;font-weight:700">Endgame — The Default Global Layer</h3><p style="font-size:14px;color:var(--t);line-height:1.6">Every cross-border company runs on Jeeves. Like Stripe for payments — Jeeves for global business finance.</p></div>
+</div>
+<div style="background:var(--c);border:1px solid var(--br);border-radius:14px;padding:36px">
+<p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--d);margin-bottom:20px">The Trajectory</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--br)"><span style="color:var(--d);font-size:14px">Jan 2024</span><span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--w)">$6M</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--br)"><span style="color:var(--d);font-size:14px">Jan 2025</span><span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--w)">$17M</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--br)"><span style="color:var(--d);font-size:14px">Jan 2026</span><span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--w)">$43M</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--br)"><span style="color:var(--g);font-size:14px;font-weight:600">EOY 2026</span><span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--g)">$100M</span></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0"><span style="color:var(--g);font-size:14px;font-weight:600">2027</span><span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--g)">$250M</span></div>
+<div class="sp" style="margin:16px 0 8px"></div>
+<p style="font-size:12px;color:var(--d)">83% gross margin · 45%+ contribution margin</p>
+</div>
+</div></div>
+</section>
+
+<!-- S16: INVESTORS -->
+<section id="s16">
+<div class="f"><div class="tg">Investor Base</div></div>
+<div class="f d1"><h2>Funding thus far: <span class="gl it">well capitalized.</span></h2></div>
+<div class="f d2"><p class="su">Backed by a strong investor base across six rounds of equity and debt.</p></div>
+<div class="f d3"><div class="tc" style="max-width:1000px;margin-top:32px">
+<div>
+<!-- Funding timeline -->
+<div style="position:relative;padding-left:28px">
+<div style="position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:linear-gradient(to bottom,var(--g),var(--br))"></div>
+<div style="margin-bottom:24px;position:relative"><div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--g);box-shadow:0 0 12px rgba(201,168,76,.3)"></div><div style="font-size:12px;color:var(--d)">Aug 2020</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--w)">$5M Seed</div><div style="font-size:12px;color:var(--t);margin-top:2px">Y Combinator · Jaguar Ventures · Uncorrelated Ventures</div></div>
+<div style="margin-bottom:24px;position:relative"><div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--g);box-shadow:0 0 12px rgba(201,168,76,.3)"></div><div style="font-size:12px;color:var(--d)">Mar 2021</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--w)">$26M Series A</div><div style="font-size:12px;color:var(--t);margin-top:2px">Andreessen Horowitz</div></div>
+<div style="margin-bottom:24px;position:relative"><div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--g);box-shadow:0 0 12px rgba(201,168,76,.3)"></div><div style="font-size:12px;color:var(--d)">Aug 2021</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--w)">$57M Series B</div><div style="font-size:12px;color:var(--t);margin-top:2px">CRV · Tencent · SVB</div></div>
+<div style="margin-bottom:24px;position:relative"><div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--g);box-shadow:0 0 12px rgba(201,168,76,.3)"></div><div style="font-size:12px;color:var(--d)">Apr 2022</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--w)">$180M Series C</div><div style="font-size:12px;color:var(--t);margin-top:2px">Tencent · GIC</div></div>
+<div style="margin-bottom:24px;position:relative"><div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;background:rgba(201,168,76,.5)"></div><div style="font-size:12px;color:var(--d)">Dec 2023</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--w)">$75M Debt Facility</div><div style="font-size:12px;color:var(--t);margin-top:2px">CIM (Community Investment Management)</div></div>
+<div style="position:relative"><div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--g);box-shadow:0 0 16px rgba(201,168,76,.4)"></div><div style="font-size:12px;color:var(--d)">Dec 2025</div><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--g)">$100M MX ABS Facility</div><div style="font-size:12px;color:var(--t);margin-top:2px">CIM (Community Investment Management)</div></div>
+</div>
+</div>
+<div>
+<div style="background:var(--c);border:1px solid rgba(201,168,76,.2);border-radius:14px;padding:28px;margin-bottom:20px">
+<div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:16px">Support & Backing from 20 Unicorn CEOs/Founders</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Nubank</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Bitso</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Kavak</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Runa</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">BlockFi</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Rappi</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Loft</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Ualá</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Monzo</span>
+<span style="background:rgba(255,255,255,.05);border:1px solid var(--br);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--w);font-weight:500">Thirty Five (Kevin Durant)</span>
+</div>
+</div>
+<div class="gr g2" style="margin-top:0;gap:12px">
+<div class="cd"><div class="l">Total Equity Raised</div><div class="n">$268M</div></div>
+<div class="cd"><div class="l">Cash Proxy</div><div class="n">$60M+</div></div>
+<div class="cd"><div class="l">Credit Facilities</div><div class="n">$175M</div></div>
+<div class="cd"><div class="l">Monthly Burn</div><div class="n">&lt;$1M</div><div class="s">Dec 2025</div></div>
+</div>
+</div>
+</div></div>
+</section>
+
+<!-- S17: CLOSING -->
+<section id="s17" style="text-align:center;align-items:center">
+<div class="f"><p class="tg">The Inevitable Shift</p></div>
+<div class="f d1"><h1 style="max-width:900px">The stablecoin-native<br>financial operating system<br><span class="gl it">has arrived.</span></h1></div>
+<div class="f d2"><p style="font-size:18px;color:var(--d);line-height:1.7;max-width:650px;margin:24px auto 0;font-weight:300">$43M ARR. 133% CAGR. 83% gross margins. 45%+ contribution margins. 0.2% delinquency. 131% NRR. 5,000+ enterprises. Stablecoin-native. AI-native. Regulated.</p></div>
+<div class="f d3" style="margin-top:48px"><div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;align-items:center">
+<div class="cd" style="min-width:100px;padding:20px"><div class="l">2024</div><div class="n" style="font-size:26px">$6M</div></div>
+<span style="color:var(--g);font-size:18px">→</span>
+<div class="cd" style="min-width:100px;padding:20px"><div class="l">2025</div><div class="n" style="font-size:26px">$17M</div></div>
+<span style="color:var(--g);font-size:18px">→</span>
+<div class="cd" style="min-width:100px;padding:20px"><div class="l">Now</div><div class="n" style="font-size:26px">$43M</div></div>
+<span style="color:var(--g);font-size:18px">→</span>
+<div class="cd" style="min-width:100px;padding:20px"><div class="l">2026</div><div class="n" style="font-size:26px;color:var(--g)">$100M</div></div>
+<span style="color:var(--g);font-size:18px">→</span>
+<div class="cd" style="min-width:100px;padding:20px"><div class="l">2027</div><div class="n" style="font-size:26px;color:var(--g)">$250M</div></div>
+</div></div>
+<div class="f d4"><p style="font-size:16px;color:var(--d);margin-top:36px">tryjeeves.com · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4a2e23262f2f3a0a3e3833202f2f3c2f3964292527">[email&#160;protected]</a></p></div>
+</section>
+
+<!-- S18: APPENDIX — CREDIT -->
+<section id="s18">
+<div class="f"><div class="tg">Appendix — Credit & Risk</div></div>
+<div class="f d1"><h2>AI-Native Underwriting:<br><span class="gl it">$92M portfolio, 0.2% DQ30.</span></h2></div>
+<div class="f d2"><div class="gr g4" style="max-width:1000px;margin-top:32px">
+<div class="cd"><div class="l">Credit Book</div><div class="n">$91.6M</div><div class="s">+114% YoY</div></div>
+<div class="cd"><div class="l">DQ30 Rate</div><div class="n">0.2%</div><div class="s">Below 1% for 17 months</div></div>
+<div class="cd"><div class="l">Global Credit Limit</div><div class="n">$204M</div><div class="s">+110% YoY</div></div>
+<div class="cd"><div class="l">AI Hours Saved</div><div class="n">474/mo</div><div class="s">Across underwriting & ops</div></div>
+</div></div>
+<div class="f d3"><div class="ql" style="max-width:800px;margin-top:28px">
+<p><span class="b">●</span> V4 onboarding risk models deployed in MX and CO; BR risk model in pilot</p>
+<p><span class="b">●</span> Automated decisioning for applications ≤$50K — saving ~65 UW hours/month</p>
+<p><span class="b">●</span> Credit insurance with AIG active Jan 1 — covers up to $25M (90% coverage)</p>
+<p><span class="b">●</span> $175M in credit facilities; $100M Mexico SPV closed with CIM</p>
+<p><span class="b">●</span> New repayment model improves rank-ordering for proactive CLIs in Jan 2026</p>
+</div></div>
+</section>
+
+
+
+<!-- S19: DQ 30-59 PERFORMANCE -->
+<section id="s19">
+<div class="f"><div class="tg">Credit Performance — Delinquency</div></div>
+<div class="f d1"><h2>DQ 30-59 rate<br>held <span class="gl it">well below 1%</span> globally.</h2></div>
+<div class="f d2"><div class="gr g2" style="max-width:1040px;gap:32px;margin-top:36px;align-items:start">
+  <div>
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:12px">Global DQ 30-59 %</p>
+    <div class="cw" style="padding:20px 20px 8px"><canvas id="dqGlobalChart" height="160"></canvas></div>
+    <p style="font-size:11px;color:var(--d);margin-top:8px">Percentage of EOP balance 30–59 days past due, all markets.</p>
+  </div>
+  <div>
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:12px">DQ 30-59 % by Country</p>
+    <div class="cw" style="padding:20px 20px 8px"><canvas id="dqCountryChart" height="160"></canvas></div>
+    <div style="display:flex;gap:20px;margin-top:10px;flex-wrap:wrap">
+      <span style="font-size:11px;color:#c9a84c">● Mexico</span>
+      <span style="font-size:11px;color:#2ec4b6">● Colombia</span>
+      <span style="font-size:11px;color:#a78bfa">● Brazil</span>
+    </div>
+  </div>
+</div></div>
+<div class="f d3"><div class="gr g2" style="max-width:520px;margin-top:28px">
+  <div class="cd"><div class="l">Months Below 1%</div><div class="n">25 / 25</div><div class="s">Every month since Jan '24</div></div>
+  <div class="cd"><div class="l">24-Month Avg</div><div class="n">0.38%</div><div class="s">Consistent credit quality</div></div>
+</div></div>
+</section>
+
+<!-- S20: CHARGE-OFF PERFORMANCE -->
+<section id="s20">
+<div class="f"><div class="tg">Credit Performance — Charge-Offs</div></div>
+<div class="f d1"><h2>Charge-off rate<br><span class="gl it">actively managed</span> across markets.</h2></div>
+<div class="f d2"><div class="gr g2" style="max-width:1040px;gap:32px;margin-top:36px;align-items:start">
+  <div>
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:12px">Global Charge-Off %</p>
+    <div class="cw" style="padding:20px 20px 8px"><canvas id="coGlobalChart" height="160"></canvas></div>
+    <p style="font-size:11px;color:var(--d);margin-top:8px">Monthly charge-offs as % of beginning-of-period balance.</p>
+  </div>
+  <div>
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:12px">Charge-Off % by Country</p>
+    <div class="cw" style="padding:20px 20px 8px"><canvas id="coCountryChart" height="160"></canvas></div>
+    <div style="display:flex;gap:20px;margin-top:10px;flex-wrap:wrap">
+      <span style="font-size:11px;color:#c9a84c">● Mexico</span>
+      <span style="font-size:11px;color:#2ec4b6">● Colombia</span>
+      <span style="font-size:11px;color:#a78bfa">● Brazil</span>
+    </div>
+  </div>
+</div></div>
+<div class="f d3"><div class="gr g3" style="max-width:780px;margin-top:28px">
+  <div class="cd"><div class="l">Jan '26 Global C/O</div><div class="n">0.36%</div><div class="s">Monthly BOP balance basis</div></div>
+  <div class="cd"><div class="l">24-Month Avg</div><div class="n">0.24%</div><div class="s">Trending managed</div></div>
+  <div class="cd"><div class="l">AIG Coverage</div><div class="n">$25M</div><div class="s">90% coverage activated Jan '25</div></div>
+</div></div>
+</section>
+
+<!-- S25: GLOBAL SUMMARY — 3MO ROLLING -->
+<section id="s25">
+<div class="f"><div class="tg">Credit Performance — Summary (3Mo Rolling Avg)</div></div>
+<div class="f d1"><h2>Global DQ & charge-off<br><span class="gl it">both trending in range.</span></h2></div>
+<div class="f d2"><div class="gr g2" style="max-width:1040px;gap:32px;margin-top:36px;align-items:start">
+  <div>
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:12px">Global DQ 30-59 % — Monthly</p>
+    <div class="cw" style="padding:20px 20px 8px"><canvas id="dqGlobalRollSumChart" height="160"></canvas></div>
+    <p style="font-size:11px;color:var(--d);margin-top:8px">Monthly rate. Jan '24 – Jan '26.</p>
+  </div>
+  <div>
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g);margin-bottom:12px">Global C/O % — Monthly</p>
+    <div class="cw" style="padding:20px 20px 8px"><canvas id="coGlobalRollSumChart" height="160"></canvas></div>
+    <p style="font-size:11px;color:var(--d);margin-top:8px">Monthly charge-offs as % of BOP balance.</p>
+  </div>
+</div></div>
+<div class="f d3"><div class="gr g3" style="max-width:780px;margin-top:28px">
+  <div class="cd"><div class="l">DQ Jan '26 Rolling</div><div class="n">0.22%</div><div class="s">Below 1% target every month</div></div>
+  <div class="cd"><div class="l">C/O Jan '26 Rolling</div><div class="n">0.35%</div><div class="s">Trending down from Q2 '25 peak</div></div>
+  <div class="cd"><div class="l">AIG Coverage</div><div class="n">$25M</div><div class="s">90% coverage activated Jan '25</div></div>
+</div></div>
+</section>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+const secs=document.querySelectorAll('section'),dots=document.getElementById('dots'),cnt=document.getElementById('cnt');
+const total=secs.length;
+secs.forEach((_,i)=>{const d=document.createElement('div');d.className='dt'+(i===0?' a':'');d.onclick=()=>secs[i].scrollIntoView({behavior:'smooth'});dots.appendChild(d)});
+const allDots=document.querySelectorAll('.dt');
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const i=[...secs].indexOf(e.target);allDots.forEach((d,j)=>d.classList.toggle('a',j===i));cnt.textContent=`${String(i+1).padStart(2,'0')} / ${total}`;e.target.querySelectorAll('.f').forEach(f=>f.classList.add('v'))}})},{threshold:.35});
+secs.forEach(s=>obs.observe(s));
+
+// ARR bars + GM% line
+const arrD=[7,8,8.4,9,9.6,10.5,11.2,12,13.2,14.5,15.5,17,18,19.2,20.5,22,23.5,24.5,26,27.5,29,30.5,32,33.6,37.4,43];
+const gmD=[55,57,58,60,62,63,65,66,68,70,71,72,73,74,75,76,77,78,79,80,80,81,82,82,83,83];
+const bars=document.getElementById('arrBars');
+if(bars){const mx=Math.max(...arrD);arrD.forEach((v,i)=>{const b=document.createElement('div');b.className='br';const h=(v/mx)*100;const isLast=i===arrD.length-1;b.style.cssText=`height:${h}%;background:${isLast?'var(--g)':'rgba(201,168,76,.35)'};flex:1;border-radius:3px 3px 0 0;min-width:0;transition:height 1s ${i*.05}s`;bars.appendChild(b)})}
+setTimeout(()=>{
+  const svg=document.getElementById('gmLine');
+  if(svg&&bars){
+    const w=bars.offsetWidth,h=bars.offsetHeight;
+    svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
+    const pts=gmD.map((g,i)=>{const x=(i/(gmD.length-1))*w;const y=h-(g/100)*h;return`${x},${y}`});
+    const line=document.createElementNS('http://www.w3.org/2000/svg','polyline');
+    line.setAttribute('points',pts.join(' '));
+    line.setAttribute('fill','none');
+    line.setAttribute('stroke','#2ec4b6');
+    line.setAttribute('stroke-width','2');
+    line.setAttribute('stroke-dasharray','4,3');
+    svg.appendChild(line);
+  }
+},500);
+
+// ARR/FTE trend bars
+const fteD=[54,74,93,114,131,145,156,193];
+const fteEl=document.getElementById('arrFte');
+if(fteEl){const mx=Math.max(...fteD);fteD.forEach((v,i)=>{const b=document.createElement('div');const h=(v/mx)*100;const isLast=i===fteD.length-1;b.style.cssText=`height:${h}%;background:${isLast?'var(--g)':'rgba(201,168,76,.4)'};flex:1;border-radius:3px 3px 0 0;min-width:0;transition:height 1s ${i*.1}s`;fteEl.appendChild(b)})}
+
+// ── Credit Performance Charts ──────────────────────────────────────────────
+(function(){
+  const s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js';
+  s.onload=buildCharts;
+  document.head.appendChild(s);
+
+  function buildCharts(){
+    const periods=["Jan '24","Feb '24","Mar '24","Apr '24","May '24","Jun '24","Jul '24","Aug '24","Sep '24","Oct '24","Nov '24","Dec '24","Jan '25","Feb '25","Mar '25","Apr '25","May '25","Jun '25","Jul '25","Aug '25","Sep '25","Oct '25","Nov '25","Dec '25","Jan '26"];
+    const gdq=[0.117,0.431,0.293,0.22,0.387,0.383,0.819,0.1,0.086,0.146,0.643,0.469,0.619,0.588,0.585,0.485,0.771,0.204,0.063,0.549,0.439,0.647,0.216,0.147,0.302];
+    const gco=[0.126,0.084,0.096,0.293,0.245,0.002,0.029,0.116,0.202,0.027,0.057,0.132,0.308,0.16,0.582,0.502,0.574,0.367,0.0,0.338,0.195,0.054,0.307,0.399,0.357];
+    const cdqBR=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.63,0.343,0.0,0.401,0.634,0.0,0.0,0.045,0.0,0.0,0.269,0.174,0.036,0.0,0.0];
+    const cdqCO=[0.019,0.012,0.324,0.338,1.131,1.044,3.146,0.141,0.113,0.246,0.087,0.285,0.136,0.0,0.405,0.347,0.344,0.204,0.0,0.219,0.841,0.269,0.196,0.358,1.498];
+    const cdqMX=[0.2,0.717,0.345,0.21,0.116,0.186,0.001,0.107,0.1,0.156,0.225,0.633,1.007,0.884,0.691,0.615,1.232,0.294,0.012,1.053,0.402,1.111,0.144,0.159,0.191];
+    const ccoBR=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.119,0.303,0.0,0.345,0.78,0.0,0.0,0.0,0.031,0.0,0.0,0.238,0.0];
+    const ccoCO=[0.07,0.001,0.018,0.01,0.314,0.0,0.062,0.321,0.797,0.114,0.0,0.242,0.084,0.313,0.133,0.0,0.285,0.387,0.0,0.199,0.235,0.0,0.171,0.841,0.269];
+    const ccoMX=[0.183,0.151,0.153,0.521,0.268,0.003,0.022,0.056,0.001,0.001,0.101,0.138,0.247,0.084,0.954,0.795,0.664,0.51,0.0,0.573,0.288,0.013,0.56,0.35,0.614];
+
+    const quarters=["Q1'24","Q2'24","Q3'24","Q4'24","Q1'25","Q2'25","Q3'25","Q4'25","Q1'26"];
+    const gdqQ=[0.289,0.34,0.296,0.428,0.597,0.479,0.366,0.331,0.302];
+    const gcoQ=[0.102,0.167,0.121,0.075,0.36,0.477,0.181,0.262,0.357];
+    const cdqBRQ=[0.0,0.0,0.0,0.693,0.393,0.019,0.113,0.068,0.0];
+    const cdqCOQ=[0.138,0.867,1.026,0.207,0.189,0.293,0.382,0.273,1.498];
+    const cdqMXQ=[0.435,0.17,0.076,0.338,0.855,0.725,0.499,0.463,0.191];
+    const ccoBRQ=[0.0,0.0,0.0,0.0,0.387,0.352,0.013,0.089,0.0];
+    const ccoCOQ=[0.029,0.102,0.414,0.12,0.174,0.225,0.149,0.348,0.269];
+    const ccoMXQ=[0.163,0.243,0.024,0.082,0.455,0.651,0.294,0.324,0.614];
+
+    const gdqRaw=[0.117,0.431,0.293,0.22,0.387,0.383,0.819,0.1,0.086,0.146,0.643,0.469,0.619,0.588,0.585,0.485,0.771,0.204,0.063,0.549,0.439,0.647,0.216,0.147,0.302];
+    const gdqRoll=[null,null,0.28,0.315,0.3,0.33,0.53,0.434,0.335,0.111,0.292,0.419,0.577,0.559,0.597,0.553,0.614,0.487,0.346,0.272,0.35,0.545,0.434,0.337,0.222];
+    const gcoRaw=[0.126,0.084,0.096,0.293,0.245,0.002,0.029,0.116,0.202,0.027,0.057,0.132,0.308,0.16,0.582,0.502,0.574,0.367,0.0,0.338,0.195,0.054,0.307,0.399,0.357];
+    const gcoRoll=[null,null,0.102,0.158,0.211,0.18,0.092,0.049,0.116,0.115,0.095,0.072,0.166,0.2,0.35,0.415,0.553,0.481,0.314,0.235,0.178,0.196,0.185,0.253,0.354];
+    const cdqBRRoll=[null,null,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.543,0.658,0.658,0.248,0.345,0.345,0.211,0.015,0.015,0.015,0.09,0.148,0.16,0.07,0.012];
+    const cdqCORoll=[null,null,0.118,0.225,0.598,0.838,1.774,1.444,1.133,0.167,0.149,0.206,0.169,0.14,0.18,0.251,0.365,0.298,0.183,0.141,0.353,0.443,0.435,0.274,0.684];
+    const cdqMXRoll=[null,null,0.421,0.424,0.224,0.171,0.101,0.098,0.069,0.121,0.16,0.338,0.622,0.841,0.861,0.73,0.846,0.714,0.513,0.453,0.489,0.855,0.552,0.471,0.165];
+    const ccoBRRoll=[null,null,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.373,0.474,0.474,0.216,0.375,0.375,0.26,0.0,0.01,0.01,0.01,0.079,0.079];
+    const ccoCORoll=[null,null,0.03,0.01,0.114,0.108,0.125,0.128,0.393,0.411,0.304,0.119,0.109,0.213,0.177,0.149,0.139,0.224,0.224,0.195,0.145,0.145,0.135,0.337,0.427];
+    const ccoMXRoll=[null,null,0.162,0.275,0.314,0.264,0.098,0.027,0.026,0.019,0.034,0.08,0.162,0.156,0.428,0.611,0.804,0.656,0.391,0.361,0.287,0.291,0.287,0.308,0.508];
+
+    const tt={backgroundColor:'#1a1a1f',borderColor:'rgba(201,168,76,.3)',borderWidth:1,titleColor:'#c9a84c',bodyColor:'#d4d2cc',callbacks:{label:ctx=>` ${ctx.parsed.y!=null?ctx.parsed.y.toFixed(2)+'%':'—'}`}};
+    const ttM={backgroundColor:'#1a1a1f',borderColor:'rgba(201,168,76,.3)',borderWidth:1,titleColor:'#c9a84c',bodyColor:'#d4d2cc',callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.parsed.y!=null?ctx.parsed.y.toFixed(2)+'%':'—'}`}};
+    const xSm={grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6a6a6a',font:{size:9},maxRotation:45,autoSkip:true,maxTicksLimit:13}};
+    const xSq={grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6a6a6a',font:{size:10}}};
+    const yS={grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6a6a6a',font:{size:9},callback:v=>v+'%'},min:0,max:2};
+    const ySdqC={grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6a6a6a',font:{size:9},callback:v=>v+'%'},min:0,max:4};
+    const ySco={grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#6a6a6a',font:{size:9},callback:v=>v+'%'},min:0,max:2};
+
+    function barDS(data,colorFn){return{data,backgroundColor:data.map(colorFn),borderRadius:3,borderSkipped:false};}
+    function lineDS(data,color,dashed){return{data,borderColor:color,backgroundColor:color+'22',borderWidth:dashed?1.5:2,borderDash:dashed?[4,3]:[],pointRadius:2,pointHoverRadius:4,tension:0.3,fill:false,spanGaps:false};}
+    function lineNamed(data,color,label){return{label,data,borderColor:color,backgroundColor:color+'22',borderWidth:2,borderDash:[],pointRadius:2,pointHoverRadius:4,tension:0.3,fill:false,spanGaps:false};}
+
+    const dqColor=v=>v>=1?'rgba(239,68,68,.75)':v>=0.5?'rgba(251,191,36,.65)':'rgba(201,168,76,.55)';
+    const coColor=v=>v>=0.5?'rgba(239,68,68,.75)':v>=0.2?'rgba(251,191,36,.65)':'rgba(201,168,76,.55)';
+
+    function threshDS(labels,val){
+      return{label:'Target',type:'line',data:labels.map(()=>val),borderColor:'rgba(239,68,68,.65)',backgroundColor:'transparent',
+        borderWidth:1.5,borderDash:[5,4],pointRadius:0,pointHoverRadius:0,tension:0,fill:false,order:-1};
+    }
+    function bar(id,labels,datasets,xSc,thresh,ySc){
+      const el=document.getElementById(id);
+      if(!el) return;
+      const ds=thresh?[...datasets,threshDS(labels,thresh)]:datasets;
+      new Chart(el,{type:'bar',data:{labels,datasets:ds},options:{responsive:true,animation:{duration:800},plugins:{legend:{display:false},tooltip:tt},scales:{x:xSc,y:ySc||yS}}});
+    }
+    function multiLine(id,labels,datasets,xSc,thresh,ySc){
+      const el=document.getElementById(id);
+      if(!el) return;
+      const ds=thresh?[...datasets,threshDS(labels,thresh)]:datasets;
+      new Chart(el,{type:'line',data:{labels,datasets:ds},options:{responsive:true,animation:{duration:800},plugins:{legend:{display:false},tooltip:ttM},scales:{x:xSc,y:ySc||yS}}});
+    }
+    function dualLine(id,labels,raw,roll,xSc,thresh,ySc){
+      const el=document.getElementById(id);
+      if(!el) return;
+      const ds=[lineDS(roll,'#c9a84c',false)];
+      if(thresh) ds.push(threshDS(labels,thresh));
+      new Chart(el,{type:'line',data:{labels,datasets:ds},options:{responsive:true,animation:{duration:800},plugins:{legend:{display:false},tooltip:tt},scales:{x:xSc,y:ySc||yS}}});
+    }
+
+    // Sliced arrays: country charts from Jan '25 onward (index 12)
+    const p25=periods.slice(12);
+
+    // Monthly global + country (S19 & S20)
+    bar('dqGlobalChart',periods,[barDS(gdq,dqColor)],xSm,1);
+    multiLine('dqCountryChart',p25,[lineNamed(cdqMX.slice(12),'#c9a84c','Mexico'),lineNamed(cdqCO.slice(12),'#2ec4b6','Colombia'),lineNamed(cdqBR.slice(12),'#a78bfa','Brazil')],xSm,1,ySdqC);
+    bar('coGlobalChart',periods,[barDS(gco,coColor)],xSm,null,ySco);
+    multiLine('coCountryChart',p25,[lineNamed(ccoMX.slice(12),'#c9a84c','Mexico'),lineNamed(ccoCO.slice(12),'#2ec4b6','Colombia'),lineNamed(ccoBR.slice(12),'#a78bfa','Brazil')],xSm,null,ySco);
+
+    // Summary slide (S21)
+    bar('dqGlobalRollSumChart',periods,[barDS(gdq,dqColor)],xSm,1);
+    bar('coGlobalRollSumChart',periods,[barDS(gco,coColor)],xSm,null,ySco);
+  }
+})();
+
+</script>
+</body>
+</html>
